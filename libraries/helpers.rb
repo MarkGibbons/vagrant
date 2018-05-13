@@ -37,7 +37,7 @@ module Vagrant
       'https://releases.hashicorp.com/vagrant/'
     end
 
-    def package_name(_a = 1)
+    def package_name
       "vagrant_#{package_version}#{package_extension}"
     end
 
