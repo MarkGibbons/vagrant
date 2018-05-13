@@ -37,12 +37,12 @@ module Vagrant
       'https://releases.hashicorp.com/vagrant/'
     end
 
-    def package_name
+    def package_name(_a = 1)
       "vagrant_#{package_version}#{package_extension}"
     end
 
     def package_version
-      node['vagrant']['version']
+      @vagrant_version
     end
 
     def package_extension
@@ -82,5 +82,3 @@ module Vagrant
     end
   end
 end
-
-Chef::Recipe.send(:include, Vagrant::Helpers)
