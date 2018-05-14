@@ -12,9 +12,9 @@ resource_name :authorize_service
 property :service, String, required: true
 property :user, String, required: true
 
-require 'chef/provider/service/simple' if node['os'] == 'windows'
-require 'chef/win32/error' if node['os'] == 'windows'
-require 'win32/service' if node['os'] == 'windows'
+require 'chef/provider/service/simple' if node['os'] =~ /win/i
+require 'chef/win32/error' if node['os'] =~ /win/i
+require 'win32/service' if node['os'] =~ /win/i
 
 action_class do
   include Chef::ReservedNames::Win32::API::Error
